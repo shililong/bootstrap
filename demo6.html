@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panels</title>
+	<!-- 引用Bootstrap css-->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<!--引用js-->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/angular.min.js"></script>
+</head>
+<!--媒体组件，页面类似blog或tweets-->
+<body>
+   <header>
+   	     <h2 class="text-center center-block">Panels</h2>
+         <ul class="pager navbar-fixed-top">
+            <li class="previous">
+            <a href="./demo5.html">上一页</a>
+          </li>
+          <li class="next">
+            <a href="#">下一页</a>
+          </li>
+         </ul>
+   </header>
+   <div class="container">
+   <section>
+   <h4>基础面板</h4>  
+   <div class="panel panel-default">
+     <div class="panel-body">
+        This is panel's content.....
+     </div>
+   </div>
+   <div class="panel panel-primary">
+     <div class="panel-body">
+        This is panel's content.....
+     </div>
+   </div> 
+   </section>  
+   <section>
+   <h4>带有头和尾的面板</h4>  
+    <div class="panel panel-default">
+      <div class="panel-heading">Header</div>
+      <div class="panel-body">This is panel's content....</div>
+      <div class="panel-footer">footer</div>
+    </div>
+    <div class="panel panel-danger">
+      <div class="panel-heading">Header</div>
+      <div class="panel-body">This is panel's content....</div>
+      <div class="panel-footer">footer</div>
+    </div>
+   </section>
+   <section>
+    <h4>面板与表格嵌套</h4>
+    <div class="panel panel-danger">
+      <div class="panel-heading">Header</div>
+      <div class="panel-body">
+        <p>This is panel's content</p>
+      </div>
+        <!--当table和panel body同级时，下方可合并-->  
+        <table class="table table-striped table-bordered table-hover table-condensed table-responsive">  
+            <tr>
+              <td>#</td>
+              <td>Name</td>
+              <td>Sex</td>
+                <td>Age</td>
+            </tr>
+            <tr class="danger">
+              <td>1</td>
+              <td>Shililong</td>
+              <td>Male</td>
+                <td>30</td>
+            </tr>
+            <tr class="warning">
+              <td>2</td>
+              <td>Zouyue</td>
+              <td>Female</td>
+                <td>30</td>
+            </tr>
+         </table>
+      <div class="panel-footer">footer</div>
+    </div>
+   </section>
+   <section>
+   <h4>面板与列表组合</h4>  
+   <div class="panel panel-danger">
+     <div class="panel-heading">Header</div>
+        <p>This is panel's content</p>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Times<span class="badge">1</span></a>
+          <a href="#" class="list-group-item">Money<span class="badge">2</span></a>
+          <a href="#" class="list-group-item">Car<span class="badge">3</span></a>
+          <a href="#" class="list-group-item">Room<span class="badge">4</span></a> 
+        </div>  
+     <div class="panel-footer">footer</div>
+   </div>
+   </section>
+   </div>
+</body>
+<style type="text/css">
+
+</style>
+</html>
