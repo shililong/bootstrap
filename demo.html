@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Media</title>
+	<title>折叠</title>
 	<!-- 引用Bootstrap css-->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<!--引用js-->
@@ -14,9 +14,62 @@
 <!--媒体组件，页面类似blog或tweets-->
 <body>
    <header>
-   	     <h2 class="text-center center-block">Media Page</h2>
+   	     <h2 class="text-center center-block">折叠</h2>
    </header>
+   <div class="container">
+   <button class="btn btn-danger" data-toggle="collapse" data-target="#demo">折叠区</button>	
+   <div id="demo" class="collapse in">折叠区域....</div>
+   </div>
+   <div class="container">
+   <button class="btn btn-danger collapsed" data-toggle="collapse" data-target="#demo1">折叠区</button>	
+   <div id="demo1" class="collapse">折叠区域....</div>
+   </div>
+   <section>
+   <h4>手风琴效果</h4>	
+   <div class="panel-group" id="according">
+   	  <div class="panel panel-default">
+   	  	<div class="panel-heading">
+   	  		<h4 class="panel-title">
+                <a href="#collapseOne" data-toggle="collapse" data-parent="#according">触发元素1</a>   	  			
+   	  		</h4>
+   	  	</div>
+   	  	<div id="collapseOne" class="panel-collapse collapse">
+   	  		<div class="panel-body">
+   	  			折叠内容................................................
+   	  		</div>
+   	  	</div>
+   	  </div>
+   	  <div class="panel panel-default">
+   	  	<div class="panel-heading">
+   	  		<h4 class="panel-title">
+                <a href="#collapseTwo" data-toggle="collapse" data-parent="#according">触发元素2</a>   	  			
+   	  		</h4>
+   	  	</div>
+   	  	<div id="collapseTwo" class="panel-collapse collapse in">
+   	  		<div class="panel-body">
+   	  			折叠内容................................................
+   	  		</div>
+   	  	</div>
+   	  </div>
+   	  <div class="panel panel-default">
+   	  	<div class="panel-heading">
+   	  		<h4 class="panel-title">
+                <a href="#collapseThree" data-toggle="collapse" data-parent="#according">触发元素3</a>   	  			
+   	  		</h4>
+   	  	</div>
+   	  	<div id="collapseThree" class="panel-collapse collapse in">
+   	  		<div class="panel-body">
+   	  			折叠内容................................................
+   	  		</div>
+   	  	</div>
+   	  </div>
 
+
+
+   </div>
+
+
+   </section>
 </body>
 <style type="text/css">
 

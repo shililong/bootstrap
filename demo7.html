@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS插件-Modal弹框</title>
+	<!-- 引用Bootstrap css-->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<!--引用js-->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/angular.min.js"></script>
+</head>
+<!--媒体组件，页面类似blog或tweets-->
+<body>
+   <header>
+   	     <h2 class="text-center center-block">JS插件-Modal弹框</h2>
+   	     <div class="navbar nav-default" id="navbar-example">
+   	     	<a href="#" class="navbar-brand">Project Name</a>
+            <ul class="nav navbar-nav" role="navigation">
+            	<li class="dropdown">
+            		<a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop1">DropDown<b class="caret"></b></a>
+                    <ul class="dropdown-menu" aria-labelledby="drop1" role="menu">
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Action</a></li>
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Another Action</a></li>
+                    	<li class="divider"></li>
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Link</a></li>
+                    </ul>
+            	</li>
+            	<li class="dropdown">
+            		<a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" id="drop2">DropDown2<b class="caret"></b></a>
+                    <ul class="dropdown-menu" aria-labelledby="drop2" role="menu">
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Action</a></li>
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Another Action</a></li>
+                    	<li class="divider"></li>
+                    	<li role="presentation"><a href="#" tabindex="0" role="menuitem">Link</a></li>
+                    </ul>
+            	</li>
+            </ul>
+
+
+   	     </div>
+   </header>
+   <div class="container">
+   <section>
+   <h4>弹框布局和基本样式</h4>
+   <button class="btn btn-danger" data-toggle="modal" data-target="#popup" data-backdrop="static" >Pop</button>
+   <button type="button" class="btn btn-success" onclick="pop();">JSPop</button>
+   <div class="modal fade" id="popup" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   	<div class="modal-dialog">
+   		<div class="modal-content">
+   			<div class="modal-header">
+   				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   				<h4>Modal标题</h4>
+   			</div>
+   			<div class="modal-body">
+   				<p>this is modal content.....</p>
+   			</div>
+   			<div class="modal-footer">
+    				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    				<button type="button" class="btn btn-primary">Save</button>
+   			</div>
+   		</div>
+   	</div>
+   </div>
+   <div class="modal fade" id="mymodal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   	<div class="modal-dialog">
+   		<div class="modal-content">
+   			<div class="modal-header">
+   				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+   				<h4>JS控制</h4>
+   			</div>
+   			<div class="modal-body">
+   				<p>this is modal content.....Button2</p>
+   			</div>
+   			<div class="modal-footer">
+    				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    				<button type="button" class="btn btn-primary" onclick="close();">Save</button>
+   			</div>
+   		</div>
+   	</div>
+   </div>
+   </section>	
+   <section>
+   <h4>旋转轮播</h4>	
+   <div data-ride="carousel" class="carousel slide" id="carousel-container">
+   	  <!--图片容器-->
+      <div class="carousel-inner">
+      	<div class="item"><img alt="Num1" src="./img/3.jpg"></div>
+      	<div class="item active"><img alt="Num2" src="./img/2.jpg"></div>
+      	<div class="item"><img alt="Num3" src="./img/4.jpg"></div>
+      </div>
+      <!--圆圈指示符-->
+      <ol class="carousel-indicators">
+      	<li data-slide-to="0" ></li>
+      	<li data-slide-to="1" class="active"></li>
+      	<li data-slide-to="2" ></li>
+      </ol>
+      <!--左右控制按钮--> <!--如果不定义的话图片会自动滑动-->
+      <a href="#carousel-container" data-slide="prev" class="left carousel-control">
+      	 <span class="glyphicon glyphicon-chevron-left"></span> 
+      </a>
+      <a href="#carousel-container" data-slide="next" class="right carousel-control">
+      	 <span class="glyphicon glyphicon-chevron-right"></span> 
+      </a>
+   </div> 
+   </section>
+   <section>
+   <h4>提示框</h4>
+   <div class="container">
+   <a href="#" data-toggle="tooltip" data-original-title="1111" data-placement="top">Shililong</a>	
+   </div>
+
+   </section>
+   </div>
+</body>
+<style type="text/css">
+
+</style>
+</html>
+<script type="text/javascript">
+function pop(){
+    $('#mymodal').modal({
+          backdrop:true,
+          keyboard:true
+
+    });
+
+}
+
+function close(){
+   $('#mymodal').modal('hide');
+
+
+}	
+
+
+</script>

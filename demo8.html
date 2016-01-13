@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tile</title>
+   <!-- 引用Bootstrap css-->
+   <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+   <!--引用js-->
+   <script src="./js/jquery.min.js"></script>
+   <script src="./js/bootstrap.min.js"></script>
+   <script src="./js/angular.min.js"></script>
+    <script src="./js/tile.js"></script>
+</head>
+<!--媒体组件，页面类似blog或tweets-->
+<body>
+   <header>
+           <h2 class="text-center center-block">Tile Page</h2>
+   </header>
+   <div class="container">
+    <div class="tile-group bg-red two">
+      <div class="tile-group-title">Title</div>
+      <div class="tile od-green bd-red"></div>
+      <div class="tile ">
+         <div class="tile-content image1">
+            <img src="./img/4.jpg">
+         </div>
+      </div>
+      <div class="tile">
+        <div class="tile-content icon">
+           <img src="./img/3.jpg">
+        </div>
+      </div>
+      <div class="tile" onclick="handle();">
+        <div id="shililong" class="tile-content icon">
+           <i class="glyphicon glyphicon-play"></i>
+        </div>
+        <div id="shililong1" class="tile-content icon">
+           <i class="glyphicon glyphicon-play"></i>
+        </div>
+        <div class="brand">
+           <label>1111</label>
+           <text>222</text>
+           <div class="badge">34</div>
+        </div>
+      </div>
+    </div>
+      <div class="tile od-green bd-red"></div>
+      <!--动画效果-->
+      <div class="tile " data-toggle="tile" data-direction="slideDown" data-period="5000" data-duriation="6000" data-easing="doubleSqrt">
+         <div class="tile-content image1">
+            <img src="./img/4.jpg">
+         </div>
+         <div class="tile-content image1">
+            <img src="./img/2.jpg">
+         </div>
+         <div class="tile-content image1">
+            <img src="./img/1.jpg">
+         </div>
+      </div>
+
+
+      <div class="tile">
+        <div class="tile-content icon">
+           <img src="./img/3.jpg">
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile-content icon">
+           <i class="glyphicon glyphicon-play"></i>
+        </div>
+        <div class="brand">
+           <label>1111</label>
+           <text>222</text>
+           <div class="badge">34</div>
+        </div>
+      </div>
+       <div class="tile select"></div>
+      <div class="tile bg-red"></div>
+      <div class="tile bg-darkblack"></div>
+      <div class="tile vertical"></div>
+      <div class="triangle-up"></div>
+      <div class="box"></div>
+   </div>
+</body>
+<style type="text/css">
+/*方块定义*/
+.tile{
+   position: relative;
+   overflow: hidden;
+   display: block;
+   float: left;
+   width: 120px;
+   height: 120px;
+   margin: 0 10px 10px 0;
+   padding: 0;
+   cursor: pointer;
+   background-color: #eeeeee;
+   box-shadow: inset 0px 0px 1px #FFFFCC;
+}
+/*边框定义*/
+.tile:hover{
+   outline: #999999 solid 3px;
+}
+.tile:focus{
+   width: 150px;
+   height: 150px;
+}
+.tile.no-outline{
+   outline-color: transparent;
+}
+/*背景颜色定义*/
+.bg-red{
+   background-color: #e51400 !important;
+}
+.bg-green{
+   background-color: #60a917 !important;
+}
+.bg-darkblack{
+   background-color: #16499a !important;
+}
+/*内部文字样式*/
+.fd-red{
+   color: #e51400 !important;
+}
+/*轮廓样式*/
+.od-green{
+   outline-color: #60a917 !important;
+}
+/*边框颜色*/
+.bd-red{
+   border-color: #16499a !important;
+}
+/*尺寸样式*/
+.tile.half{
+   width: 55px;
+   height: 55px;
+}
+.tile.vertical{
+   width:55px;
+   height: 250px
+}
+/*状态设置*/
+.tile.select{
+   border:4px #4390df solid;
+}
+.tile.select:after{
+   position: absolute;
+   display: block;
+   border-top: 28px solid #4390df;
+   border-left: 28px solid transparent;
+   right: 0;
+   top: 0;
+   content: "";
+   z-index: 101;
+}   
+.tile.select:before{
+   position: absolute;
+   display: block;
+   content: "@";
+   color: #fff;
+   right: 0;
+   top: 0;
+   font-family: Glyphicons Halfling;
+   font-size: 10pt;
+   font-weight: normal;
+   z-index: 102;
+}
+
+.triangle-up {
+    position: relative;
+    display: block;
+    float: left;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+}
+
+.box{
+      position: relative;
+      display: block;
+      float: left;
+      margin: 20px auto;//设置图形居中
+      width: 0px;
+      height: 0px;
+      border-top:28px solid black;
+      border-right:28px solid gold;
+      border-bottom:28px solid #333333;
+      border-left:28px solid red;
+    }
+/*主内容区*/
+.tile .tile-content{
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 0;
+   overflow: hidden;
+
+}
+.tile .tile-content.padded{
+  padding: 10px;
+}
+.tile .tile-content.image1{
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+.tile .tile-content.icon [class*="icon-"],
+.tile .tile-content.icon [class*="glyphicon-"],
+.tile .tile-content.icon img{
+  line-height: 56px;
+  height: 56px;
+  width: 56px;
+  font-size: 48px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -28px;
+  margin-left: -28px;
+}
+/*底部横条*/
+.tile .brand{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 29px;
+  margin: 0;
+
+}
+
+.tile .brand.opacity{
+  opacity: .7;
+}
+
+.tile .brand:before,
+.tile .brand:after{
+  display: table;
+  content: "";
+}
+.tile .brand:after{
+  clear: both;
+}
+.tile .brand .label,
+.tile .brand .text{
+  float: left;
+  display: block;
+  font-size: 10pt;
+  margin: 5px 20px 2px 5px;
+  background:transparent;
+  color: #ffffff;
+
+}
+.tile .brand .badge{
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 29px;
+  height: 20px;
+  text-align: center;
+  color: #ffffff;
+  padding: 5px;
+  margin: 0;
+  vertical-align: middle !important;
+  display: block;
+  font-size: 10pt;
+  border-radius: 0px;
+}
+.tile-group{
+  float: left;
+  display: block;
+  padding: 40px 0px 0px 10px;   /**上、右、下、左**/
+  position: relative;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.tile-group .tile-group-title{
+  font-size:18px;
+  line-height: 20px;
+  position: absolute;
+  top: 10px;
+  color: inherit;
+
+}
+.tile-group.two,
+.tile-group.double{
+  width: 270px;
+}
+.tile-group.three,
+.tile-group.triple{
+  width: 400px;
+}
+.tile-group.four,
+.tile-group.quadro{
+  width: 530px;
+}
+
+.tile .tile-content{display: none;}
+.tile .tile-content:first-child{display: block;}
+</style>
+</html>
+<script type="text/javascript">
+function handle(){
+  $("#shililong").animate({ top : "-120px" });
+  $("#shililong1")
+           .css({ top : "120px"})
+           .show()
+           .animate({ top : "0px"});
+
+}  
+
+
+</script>
